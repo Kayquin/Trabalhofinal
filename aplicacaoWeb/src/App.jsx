@@ -1,22 +1,16 @@
-import { Routes, Route, Link } from 'react-router-dom';
-import { AppBar, Toolbar, Button } from '@mui/material';
-import Home from './pages/Home';
-
+import { BrowserRouter } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import AppRoutes from "./routes/AppRoutes";
+import "./App.css";
 
 function App() {
   return (
-    <>
-      <AppBar position="static">
-        <Toolbar>
-          <Button color="inherit" component={Link} to="/">Home</Button>
-        </Toolbar>
-      </AppBar>
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-
-      </Routes>
-    </>
+    <BrowserRouter>
+      <NavBar />
+      <div style={{ marginTop: 32 }}>
+        <AppRoutes />
+      </div>
+    </BrowserRouter>
   );
 }
 
